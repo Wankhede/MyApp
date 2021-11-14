@@ -1,11 +1,12 @@
 package com.example.myapp
-
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.TextView
 import com.example.myapp.databinding.ActivityMainBinding
 import com.google.firebase.auth.FirebaseAuth
 
@@ -25,6 +26,7 @@ class ProfileFragment : Fragment() {
     private var param2: String? = null
 
     var logoutbtn: Button? = null;
+    var emailid: TextView? = null;
 
     private lateinit var binding: ActivityMainBinding
 
@@ -40,25 +42,24 @@ class ProfileFragment : Fragment() {
         binding = ActivityMainBinding.inflate(layoutInflater)
 
         firebaseAuth = FirebaseAuth.getInstance()
-        checkUser{
-            binding.
-        }
 
     }
 
-    private fun checkUser() {
-
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_profile, container, false)
+
+        val v= inflater.inflate(R.layout.fragment_profile, container, false)
+        logoutbtn = v.findViewById(R.id.LogoutBtn)
+        emailid = v.findViewById(R.id.email_id)
+        return v
     }
 
-    
+
+
+
     companion object {
         /**
          * Use this factory method to create a new instance of
