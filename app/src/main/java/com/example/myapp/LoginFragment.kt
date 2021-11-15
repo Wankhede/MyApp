@@ -9,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.Toast
+import com.google.firebase.*
 import androidx.fragment.app.FragmentManager
 import com.example.myapp.databinding.ActivityMainBinding
 import com.google.android.gms.auth.api.signin.GoogleSignIn
@@ -45,6 +46,22 @@ class LoginFragment : Fragment() {
 
     var signInButton: Button? = null
 
+    companion object {
+
+        fun newInstance(param1: String, param2: String) =
+            LoginFragment().apply {
+                arguments = Bundle().apply {
+                    putString(ARG_PARAM1, param1)
+                    putString(ARG_PARAM2, param2)
+
+                }
+            }
+
+        private const val RC_SIGN = 100
+
+        private const val TAG = "SIGN_IN_TAG"
+    }
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -54,8 +71,7 @@ class LoginFragment : Fragment() {
         val v= inflater.inflate(R.layout.fragment_profile, container, false)
 
         signInButton = v.findViewById(R.id.SiginInButtonn)
-
-
+        
 
         // Inflate the layout for this fragment
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -66,6 +82,8 @@ class LoginFragment : Fragment() {
         googleSignInClient = GoogleSignIn.getClient(context, googleSignInOptions)
 
         firebaseAuth = FirebaseAuth.getInstance()
+
+
 
 //        binding.signInButton!!.setOnClickListener {
 //            val intent = googleSignInClient.signInIntent
@@ -89,6 +107,8 @@ class LoginFragment : Fragment() {
 
         return inflater.inflate(R.layout.fragment_login, container, false)
     }
+
+
 
     private fun setFragment(fragment : Fragment) {
         getFragmentManager()
@@ -140,30 +160,7 @@ class LoginFragment : Fragment() {
 
             }
     }
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment LoginFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            LoginFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
 
-                }
-            }
-
-        private const val RC_SIGN = 100
-
-        private const val TAG = "SIGN_IN_TAG"
-    }
 
 
 }

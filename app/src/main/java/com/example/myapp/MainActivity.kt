@@ -22,7 +22,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         supportFragmentManager.beginTransaction()
-            .add(android.R.id.content, LoginFragment()).commit()
+            .add(android.R.id.content, NotesFragment()).commit()
        // setFragment(ProfileFragment())
     }
 
