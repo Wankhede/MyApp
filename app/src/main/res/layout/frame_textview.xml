@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:id="@+id/frametextview"
+    android:layout_margin="8dp">
+
+    <ImageButton
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_gravity="end"
+        android:id="@+id/delete_btn"
+        android:clickable="true"
+        android:src="@drawable/deleteicon"
+        android:scaleType="fitXY"
+        />
+
+    <TextView
+        android:id="@+id/NoteId"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:textSize="24dp"
+        android:textStyle="italic"
+        style="@style/TextAppearance.MaterialComponents.Body1"
+        android:hint="Note Id" />
+
+
+
+    <TextView
+        android:id="@+id/NoteDescription"
+        style="@style/TextAppearance.MaterialComponents.Caption"
+        android:textStyle="bold"
+        android:textSize="29dp"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:hint="Description" />
+
+
+
+</LinearLayout>
+
+
+
+
+

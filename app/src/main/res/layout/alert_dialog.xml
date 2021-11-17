@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+     xmlns:android="http://schemas.android.com/apk/res/android"
+     android:layout_width="wrap_content"
+     android:layout_height="wrap_content"
+    android:background="@drawable/alert_rect_shape">
+
+    <TextView
+        android:id="@+id/dialog_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textSize="16sp"
+        android:padding="10dp"
+        android:text="gjgjjgjh"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/black"
+        />
+
+    <TextView
+        android:id="@+id/dialog_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textSize="14sp"
+        android:padding="5dp"
+        android:text="hhghgj"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/dialog_title"
+        android:textColor="@color/black"
+        />
+
+    <Button
+        android:id="@+id/btn_ok"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="120dp"
+        android:textAllCaps="false"
+        android:textSize="16sp"
+        android:background="@drawable/dialog_border"
+        android:textColor="@color/white"
+        />
+
+
+
+</RelativeLayout>
